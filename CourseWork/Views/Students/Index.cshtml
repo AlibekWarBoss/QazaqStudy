@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CourseWork.Models.Student>
+
+@{
+    ViewBag.Title = "Students";
+}
+
+@*<h2>Index</h2>*@
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div class="container ">
+    <div class="row mt-5 text-left">
+        <h1 style="margin-left: auto;margin-left: auto">Students</h1>
+    </div>
+    <div class="row mt-2 text-right">
+        <a href="Students/Create" type="button" class="btn btn-outline-warning" style="" >
+            +ADD NEW
+        </a>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>FULL NAME</th>
+                        <th>Age</th>
+                        <th>Country</th>
+                        <th>Email</th>
+                        <th>DETAILS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.Surname)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Age)</td>
+                        <td> @Html.DisplayFor(modelItem => item.Country)</td>
+                        <td> @Html.DisplayFor(modelItem => item.Email)</td>
+                        <td>
+                            <a href="Students/Details/@item.Id"
+                               class="btn btn-info btn-sm">DETAILS</a>
+                        </td>
+                        @*<td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>*@
+                    </tr>
+                    }
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

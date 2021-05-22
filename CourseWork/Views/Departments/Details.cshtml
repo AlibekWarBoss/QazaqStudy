@@ -1,0 +1,28 @@
+﻿@model CourseWork.Models.Department
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <h2>@Html.DisplayNameFor(model => model.Department_Name)</h2>
+        </dt>
+
+        <dd>
+            <h2 style="border: 3px solid black; width:300px"> @Html.DisplayFor(model => model.Department_Name)</h2>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn btn-outline-warning" >@Html.ActionLink("Back to List", "Index")</button>
+    <button class="bbtn btn-outline-warning">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</button>
+    
+    
+</p>

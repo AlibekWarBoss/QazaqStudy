@@ -1,0 +1,69 @@
+﻿@model CourseWork.Models.Payment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you delete?</h3>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 class="display-4">@Model.Course.Course_Name</h1>
+        <p class="lead">@Model.Student.Name @Model.Student.Surname</p>
+        <p class="lead">@Model.dateOfPay</p>
+        <hr class="my-4">
+        <p>@Model.Price.price tenge</p>
+        @*<a class="btn btn-primary" class ="form-control" href="/Payments/Edit/@Model.Id" role="button">Edit</a>
+        <a class="btn btn-danger" class ="form-control" href="/Payments/Delete/@Model.Id" role="button">Delete</a>*@
+    </div>
+</div>
+<div>
+    @*<h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Course_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Course_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfPay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfPay)
+        </dd>
+
+    </dl>*@
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a href="/" class="btn btn-warning">Back to List</a>
+        </div>
+    }
+</div>

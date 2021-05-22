@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CourseWork.Models.Price>
+
+@{
+    ViewBag.Title = "Price";
+}
+
+
+<div class="container ">
+    <div class="row mt-5 text-center">
+        <h1 style="margin-left: auto;margin-right: auto">Price</h1>
+    </div>
+    <div class="row mt-2 text-left">
+        <a href="Prices/Create" type="button" class="btn btn-outline-warning" style="">
+            +ADD NEW
+        </a>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Price</th>
+                        <th>DETAILS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.price $</td>
+                            <td>
+                                <a href="Prices/Details/@item.Id"
+                                   class="btn btn-info btn-sm">DETAILS</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>*@

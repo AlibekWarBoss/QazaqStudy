@@ -1,0 +1,44 @@
+﻿@model CourseWork.Models.Course
+    @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="container ">
+    <div class="row mt-5 text-center">
+        <h1 style="margin-left: auto;margin-right: auto">Courses Details</h1>
+    </div>
+    
+    <div class="col-sm-6 mt-4 offset-3">
+        <form action="" method="post">
+            <input type="hidden" name="studId" value="@Model.Id">
+            <div class="form-group">
+                <label>Course Name:</label>
+                <input class="form-control" name="name" type="text" value="@Model.Course_Name" readonly>
+            </div>
+            <div class="form-group">
+                <label>Course Level:</label>
+                <input class="form-control" name="level" type="text"
+                       value="@Model.LevelId" readonly>
+            </div>
+            <div class="form-group">
+                <label>Department:</label>
+                <input class="form-control" name="dep" type="text" value="@Model.DepartmentId" readonly>
+            </div>
+            <div class="form-group">
+                <label>Course Duration:</label>
+                <input class="form-control" name="dur" type="text" value="@Model.CourseDuration" readonly>
+            </div>
+            <div>
+                <button type="submit" name="updateStudent" class="btn btn-warning btn-sm">SAVE</button>
+                <button type="button" onclick="deletePost(<?php echo $student['id'] ?>)"
+                        class="btn btn-danger float-right btn-sm" data-toggle="modal"
+                        data-target="#exampleModal">
+                    DELETE
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
